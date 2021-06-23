@@ -154,3 +154,10 @@ function isEquivalentLinear(a, b) {
     return true;
     
 }
+
+function changeImage(element) {
+  var right = "https://van-griner.mobius.cloud/web/Htmlc000/Public_Html/chemTool/bond-linear-1.png";
+  var left = "https://van-griner.mobius.cloud/web/Htmlc000/Public_Html/chemTool/bond-double.png";
+  element.src = element.bln ? right : left;
+  element.bln = !element.bln;
+}
