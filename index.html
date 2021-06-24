@@ -11,9 +11,11 @@
 
 <label for="geometry">Select geometry:</label>
 <select name="geometry" id="geometry" onchange=place();>
+<option value="tetrahedral-test">Tetrahedral-Test</option>
   <option value="linear">Linear</option>
   <option value="tri_planar">Trigonal planar</option>
   <option value="tetrahedral">Tetrahedral</option>
+  
   <option value="trigonalbi">Trigonal bipyramidal</option>
   <option value="octahedral">Octahedral</option>
 </select>
@@ -101,6 +103,27 @@
   </div>
 </div>
 
+<!--Tetrahedral-test-->
+<div class="step2" id="step2-tetrahedral-test">
+<div class="dropBox" id="div1-tetra-test"></div> 
+<div class="dropBox" id="div3-tetra-test"></div>
+<div class="dropBox" id="div5-tetra-test"></div>
+<div class="dropBox" id="div4-tetra-test"></div> 
+<div class="dropBox" id="div2-tetra-test"></div>   
+<img class="bond" id="bond1-tetra-test" alt="" src="https://van-griner.mobius.cloud/web/Htmlc000/Public_Html/chemTool/bond-1.png" />
+<img class="bond" id="bond2-tetra-test" alt="" src="https://van-griner.mobius.cloud/web/Htmlc000/Public_Html/chemTool/bond-2.png" />
+<img class="bond" alt="" id="bond3-tetra-test" style="height:50px;" src="https://van-griner.mobius.cloud/web/Htmlc000/Public_Html/chemTool/bond-3.png" />   
+<img class="bond" alt="" id="bond4-tetra-test" src="https://van-griner.mobius.cloud/web/Htmlc000/Public_Html/chemTool/bond-4.png" />
+
+<canvas id="Canvas26" width="70" height="70"></canvas>   
+<div class="spacer"></div>
+<div id="bottom-buttons">
+  <button id="clear-btn" onclick="clearBoxesTetraTest()">Clear</button>
+  <button id="submit-btn" onclick="submitAnswerTetra()">Submit</button>
+  </div>
+</div>
+
+
 <!--Triagonal Bi-->
 <div class="step2" id="step2-trigonalbi">
 <div class="dropBox" id="div1-trigonalbi"></div>  
@@ -167,5 +190,6 @@
 <script src="tetra.js"></script>
 <script src="trigonalbi.js"></script>
 <script src="octahedral.js"></script>
+<script src="tetra-test.js"></script>
 </body>
 </html>

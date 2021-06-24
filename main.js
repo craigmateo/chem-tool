@@ -34,6 +34,10 @@ function clearAll(s) {
     clearBoxesPlanar()
   }
 
+  if (s=="tetrahedral-test") {
+    clearBoxesTetra();
+  }
+
   if (s=="tetrahedral") {
     clearBoxesTetra();
   }
@@ -262,8 +266,23 @@ jQuery(".atom").click(function(){
         
       }
 
+      else if (selected=="tetrahedral-test") {
+        document.getElementById(target_box).innerHTML = "&#183;&#183;";
+        var div_id_new = div_id+"-tetra-test";
+        var bondid = div_id_new.replace("div", "bond");
+        console.log(bondid);
+        document.getElementById(bondid).style.visibility ="hidden";
+        document.getElementById(div_id+"-tetra-test").style.visibility ="hidden";
+
+        var numStr = div_id.replace("div","");
+        var num = parseInt(numStr);
+
+        addPoints(angles26[num-1], ctx26);
+        CH4_ans.a5_e += 1;
+        count26 += 1;
 
 
+      }
     }
 
   
