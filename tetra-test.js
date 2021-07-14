@@ -6,10 +6,10 @@ var angles26 = [90,220,300,-20]; // angles for circles (to add lone pair)
 
 
 // JSON variable for submitted molecule
-var CH4_ans = { a1: "", a2: "", a3: "", a4: "", a5: "", a1_e: 0, a2_e: 0, a3_e: 0, a4_e: 0,a5_e: 0};
+var NH3_ans = { a1: "", a2: "", a3: "", a4: "", a5: "", a5_e: 0};
 
 // JSON variable for correct molecule
-var CH4_cor = { a1: "H", a2: "H", a3: "H", a4: "H", a5: "C", a1_e: 0, a2_e: 0, a3_e: 0, a4_e: 0, a5_e: 0};
+var NH3_cor = { a1: "··", a2: "H", a3: "H", a4: "H", a5: "N", a5_e: 1};
 
 // clear content in molecule
 
@@ -37,7 +37,7 @@ function clearBoxesTetraTest() {
   }
 
   ctx26.clearRect(0, 0, c26.width, c26.height);
-  CH4_ans.a3_e=CH4_ans.a2_e=CH4_ans.a1_e = 0;
+  NH3_ans.a3_e=NH3_ans.a2_e=NH3_ans.a1_e = 0;
   count26=alpha26=0;
   atom="";
   document.getElementById("feedback").innerHTML = "&nbsp;";
@@ -47,21 +47,22 @@ function clearBoxesTetraTest() {
 called when submit button is clicked
 */
 
-function submitAnswerTetra() { 
-  var a1 = document.getElementById("div1-tetra").innerHTML;
-  var a2 = document.getElementById("div2-tetra").innerHTML;
-  var a3 = document.getElementById("div3-tetra").innerHTML;
-  var a4 = document.getElementById("div4-tetra").innerHTML;
-  var a5 = document.getElementById("div5-tetra").innerHTML;
-  CH4_ans.a1 = a1;
-  CH4_ans.a2 = a2;
-  CH4_ans.a3 = a3;
-  CH4_ans.a4 = a4;
-  CH4_ans.a5 = a5;
-  console.log(CH4_ans);
+function submitAnswerTetraTest() { 
+  var a1 = document.getElementById("div1-tetra-test").innerHTML;
+  var a2 = document.getElementById("div2-tetra-test").innerHTML;
+  var a3 = document.getElementById("div3-tetra-test").innerHTML;
+  var a4 = document.getElementById("div4-tetra-test").innerHTML;
+  var a5 = document.getElementById("div5-tetra-test").innerHTML;
+  NH3_ans.a1 = a1;
+  NH3_ans.a2 = a2;
+  NH3_ans.a3 = a3;
+  NH3_ans.a4 = a4;
+  NH3_ans.a5 = a5;
+  console.log(NH3_ans);
+  console.log(NH3_cor);
   var fb = document.getElementById("feedback");
   
-  if (isEquivalentTetra(CH4_ans, CH4_cor)) {
+  if (isEquivalentTetraTest(NH3_ans, NH3_cor)) {
     fb.innerHTML = "Correct!";
     document.getElementById("div1-tetra").innerHTML;
   }
@@ -118,7 +119,7 @@ function addPoints(alpha, canvas) {
 check is structures match
 */
 
-function isEquivalentTetra(a, b) {
+function isEquivalentTetraTest(a, b) {
     // Create arrays of property names
     var aProps = Object.getOwnPropertyNames(a);
     var bProps = Object.getOwnPropertyNames(b);
@@ -129,14 +130,24 @@ function isEquivalentTetra(a, b) {
         return false;
     }
 
+    var countH=0;
+
     for (var i = 0; i < aProps.length; i++) {
         var propName = aProps[i];
 
         // If values of same property are not equal,
         // objects are not equivalent
-        if (a[propName] !== b[propName]) {
-            return false;
+        if (a[propName]=="H") {
+          countH += 1;
         }
+
+        if (a[propName]=="N" && i != 4) {
+          return false;
+        }
+    }
+
+    if (countH != 3) {
+      return false;
     }
 
     // If we made it this far, objects

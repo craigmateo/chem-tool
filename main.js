@@ -278,7 +278,7 @@ jQuery(".atom").click(function(){
         var num = parseInt(numStr);
 
         addPoints(angles26[num-1], ctx26);
-        CH4_ans.a5_e += 1;
+        NH3_ans.a5_e += 1;
         count26 += 1;
 
 
