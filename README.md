@@ -2,6 +2,8 @@
 
 A web-based interactive for chemistry students. Testing electron pair and molecular geometry.
 
+[Demo](https://codepen.io/cfrayne/full/mdXmJPe) 
+
 ## Description
 
 A Javascript based web applicataion. 
