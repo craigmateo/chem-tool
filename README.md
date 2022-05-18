@@ -4,6 +4,8 @@ A web-based interactive for chemistry students. Testing electron pair and molecu
 
 [Demo](https://codepen.io/cfrayne/full/mdXmJPe) 
 
+![](https://github.com/craigmateo/chem-tool/blob/main/assets/screenshot.jpg)
+
 ## Description
 
 A Javascript based web applicataion. 
