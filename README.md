@@ -17,7 +17,7 @@ A Javascript based web applicataion.
 ### Dependencies
 
 * vanilla JS with jQuery cdn
-* ![Mobius](https://www.digitaled.com/mobius) (optional) 
+* [Mobius](https://www.digitaled.com/mobius) (*optional*) 
 
 ### Installing
 
