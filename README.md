@@ -1,4 +1,4 @@
-# Molecular Geomatry
+# Molecular Geometry
 
 A web-based interactive for chemistry students. Testing electron pair and molecular geometry.
 
