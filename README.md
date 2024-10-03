@@ -20,12 +20,7 @@ A Javascript based web applicataion.
 
 ### Dependencies
 
-* vanilla JS with jQuery cdn
-* [Mobius](https://www.digitaled.com/mobius) (*optional*) 
-
-### Installing
-
-* For Mobius, download the zip in the `mobius` subfolder. The Import to Mobius will be an html question.
+* None. Vanilla JS with jQuery cdn.
 
 ### Data
 
@@ -55,11 +50,6 @@ A Javascript based web applicataion.
 ```
 
 `"Bond 1":"x"` indicates no bond.   
-
-## Version History
-
-* 0.1
-    * Initial Release
 
 ## License
 
